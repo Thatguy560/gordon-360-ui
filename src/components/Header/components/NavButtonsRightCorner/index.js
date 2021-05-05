@@ -103,22 +103,22 @@ const GordonNavButtonsRightCorner = ({
 
   return (
     <>
-      <div id="right-side-menu">
-        <Popover
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'right',
-          }}
-          anchorEl={anchorEl}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-          open={open}
-          onClose={onClose}
-          className="right-side-nav-buttons"
-        >
-          <List id="right-side-menu-list" disablePadding={true}>
+      <Popover
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        anchorEl={anchorEl}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={open}
+        onClose={onClose}
+        className="right-side-nav-buttons"
+      >
+        <nav>
+          <List disablePadding={true}>
             <div id="right-menu-triangle" />
             {myProfileButton}
             {linksButton}
@@ -129,8 +129,8 @@ const GordonNavButtonsRightCorner = ({
             {adminButton}
             {signInOutButton}
           </List>
-        </Popover>
-      </div>
+        </nav>
+      </Popover>
 
       <GordonQuickLinksDialog
         handleLinkClickOpen={() => setLinkOpen(true)}

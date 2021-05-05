@@ -186,7 +186,7 @@ const GordonNavLinks = ({ onLinkClick, onSignOut, authentication }) => {
   );
 
   return (
-    <>
+    <nav>
       <List className="gordon-nav-links">
         {homeButton}
         {involvementsButton}
@@ -214,7 +214,7 @@ const GordonNavLinks = ({ onLinkClick, onSignOut, authentication }) => {
       />
 
       {dialogBox()}
-    </>
+    </nav>
   );
 };
 
