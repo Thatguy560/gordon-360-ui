@@ -440,16 +440,14 @@ const Identification = ({ profile, myProf, network, createSnackbar }) => {
                 accept="image/jpeg, image/jpg, image/png"
               >
                 {({ getRootProps, getInputProps }) => (
-                  <section>
-                    <div className="gc360-photo-dialog-box_content_dropzone" {...getRootProps()}>
-                      <input {...getInputProps()} />
-                      <img
-                        className="gc360-photo-dialog-box_content_dropzone_img"
-                        src={`data:image/jpg;base64,${preferredUserImage || defaultUserImage}`}
-                        alt="Profile"
-                      />
-                    </div>
-                  </section>
+                  <div className="gc360-photo-dialog-box_content_dropzone" {...getRootProps()}>
+                    <input {...getInputProps()} />
+                    <img
+                      className="gc360-photo-dialog-box_content_dropzone_img"
+                      src={`data:image/jpg;base64,${preferredUserImage || defaultUserImage}`}
+                      alt="Profile"
+                    />
+                  </div>
                 )}
               </Dropzone>
             )}

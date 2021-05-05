@@ -103,7 +103,7 @@ export default class PeopleSearchResult extends Component {
     }
 
     return (
-      <section>
+      <>
         <Divider />
         <Link className="gc360-link" to={`profile/${Person.AD_Username}`}>
           <Grid
@@ -141,7 +141,7 @@ export default class PeopleSearchResult extends Component {
           </Grid>
         </Link>
         <Divider />
-      </section>
+      </>
     );
   }
 }

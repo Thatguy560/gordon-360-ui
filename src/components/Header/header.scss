@@ -8,10 +8,7 @@ $drawer-width: 240px;
   display: inline-flex;
   justify-content: center;
 
-  .app-bar {
-    position: absolute;
-    background-repeat: no-repeat;
-  }
+  background-repeat: no-repeat;
 
   .tab {
     transition: min-width 0.2s;
@@ -33,10 +30,8 @@ $drawer-width: 240px;
   }
 
   @media (min-width: 0px) {
-    .app-bar {
-      background-image: url('./gc_seal_top_56.png');
-      height: $header-height-xs;
-    }
+    background-image: url('./gc_seal_top_56.png');
+    height: $header-height-xs;
 
     .center-container {
       visibility: hidden;
@@ -50,10 +45,8 @@ $drawer-width: 240px;
   }
 
   @media (min-width: $break-sm) {
-    .app-bar {
-      background-image: url('./gc_seal_top_64.png');
-      height: $header-height-sm;
-    }
+    background-image: url('./gc_seal_top_64.png');
+    height: $header-height-sm;
     .right-side-container {
       width: auto;
       margin-left: 24px;
@@ -64,10 +57,8 @@ $drawer-width: 240px;
     .menu-button {
       display: none;
     }
-    .app-bar {
-      background-image: url('./gc_seal_top_72.png');
-      height: $header-height-md;
-    }
+    background-image: url('./gc_seal_top_72.png');
+    height: $header-height-md;
 
     .center-container {
       flex: 8;

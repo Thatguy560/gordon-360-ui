@@ -170,82 +170,80 @@ const GordonHeader = ({ authentication, onDrawerToggle, onSignOut }) => {
   );
 
   return (
-    <section className="gordon-header">
-      <AppBar className="app-bar" position="static">
-        <Toolbar>
-          <IconButton
-            className="menu-button"
-            color="primary"
-            aria-label="open drawer"
-            onClick={onDrawerToggle}
-          >
-            <MenuIcon className="menu-button-icon" />
-          </IconButton>
+    <AppBar className="gordon-header">
+      <Toolbar>
+        <IconButton
+          className="menu-button"
+          color="primary"
+          aria-label="open drawer"
+          onClick={onDrawerToggle}
+        >
+          <MenuIcon className="menu-button-icon" />
+        </IconButton>
 
-          <Typography className="title disable-select" variant="h6" color="inherit">
-            <Switch>
-              {routes.map((route) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  exact={route.exact}
-                  component={getRouteName(route)}
-                />
-              ))}
-            </Switch>
-          </Typography>
-
-          <div className="center-container">
-            <Tabs centered value={tabIndex} onChange={(event, value) => setTabIndex(value)}>
-              <Tab
-                className="tab"
-                icon={<HomeIcon />}
-                label="Home"
-                component={ForwardNavLink}
-                to="/"
+        <Typography className="title disable-select" variant="h6" color="inherit">
+          <Switch>
+            {routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                exact={route.exact}
+                component={getRouteName(route)}
               />
-              <Tab
-                className="tab"
-                icon={<LocalActivityIcon />}
-                label="Involvements"
-                component={ForwardNavLink}
-                to="/involvements"
-              />
-              <Tab
-                className="tab"
-                icon={<EventIcon />}
-                label="Events"
-                component={ForwardNavLink}
-                to="/events"
-              />
-              {disablableTab('People', <PeopleIcon />)}
-              {/* {disablableTab('Timesheets', WorkIcon)} */}
-              {disablableTab('Wellness', <WellnessIcon />)}
-            </Tabs>
-          </div>
+            ))}
+          </Switch>
+        </Typography>
 
-          {authentication ? <GordonPeopleSearch authentication={authentication} /> : loginButton}
+        <div className="center-container">
+          <Tabs centered value={tabIndex} onChange={(event, value) => setTabIndex(value)}>
+            <Tab
+              className="tab"
+              icon={<HomeIcon />}
+              label="Home"
+              component={ForwardNavLink}
+              to="/"
+            />
+            <Tab
+              className="tab"
+              icon={<LocalActivityIcon />}
+              label="Involvements"
+              component={ForwardNavLink}
+              to="/involvements"
+            />
+            <Tab
+              className="tab"
+              icon={<EventIcon />}
+              label="Events"
+              component={ForwardNavLink}
+              to="/events"
+            />
+            {disablableTab('People', <PeopleIcon />)}
+            {/* {disablableTab('Timesheets', WorkIcon)} */}
+            {disablableTab('Wellness', <WellnessIcon />)}
+          </Tabs>
+        </div>
 
-          <GordonNavAvatarRightCorner
-            onSignOut={onSignOut}
-            authentication={authentication}
-            onClick={handleOpenMenu}
-            menuOpened={isMenuOpen}
-          />
+        {authentication ? <GordonPeopleSearch authentication={authentication} /> : loginButton}
 
-          <GordonNavButtonsRightCorner
-            open={isMenuOpen}
-            openDialogBox={setDialog}
-            onSignOut={onSignOut}
-            authentication={authentication}
-            anchorEl={anchorElement}
-            onClose={handleCloseMenu}
-          />
+        <GordonNavAvatarRightCorner
+          onSignOut={onSignOut}
+          authentication={authentication}
+          onClick={handleOpenMenu}
+          menuOpened={isMenuOpen}
+        />
 
-          {createDialogBox()}
-        </Toolbar>
-      </AppBar>
-    </section>
+        <GordonNavButtonsRightCorner
+          open={isMenuOpen}
+          openDialogBox={setDialog}
+          onSignOut={onSignOut}
+          authentication={authentication}
+          anchorEl={anchorElement}
+          onClose={handleCloseMenu}
+        />
+
+        {createDialogBox()}
+      </Toolbar>
+    </AppBar>
   );
 };
 

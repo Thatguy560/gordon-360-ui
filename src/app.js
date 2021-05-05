@@ -59,43 +59,41 @@ export default class App extends Component {
         <MuiPickersUtilsProvider utils={MomentUtils}>
           <NetworkContextProvider>
             <Router history={this.history}>
-              <section className="app-wrapper">
-                <GordonHeader
-                  onDrawerToggle={this.onDrawerToggle}
-                  onSignOut={this.onAuthChange}
-                  authentication={this.state.authentication}
-                />
-                <GordonNav
-                  onDrawerToggle={this.onDrawerToggle}
-                  drawerOpen={this.state.drawerOpen}
-                  onSignOut={this.onAuthChange}
-                  authentication={this.state.authentication}
-                />
-                <main className="app-main">
-                  <Switch>
-                    {routes.map((route) => (
-                      <Route
-                        key={route.path}
-                        path={route.path}
-                        exact={route.exact}
-                        render={(props) => (
-                          <div className="app-main-container">
-                            <OfflineBanner
-                              currentPath={route.path}
-                              authentication={this.state.authentication}
-                            />
-                            <route.component
-                              onLogIn={this.onAuthChange}
-                              authentication={this.state.authentication}
-                              {...props}
-                            />
-                          </div>
-                        )}
-                      />
-                    ))}
-                  </Switch>
-                </main>
-              </section>
+              <GordonHeader
+                onDrawerToggle={this.onDrawerToggle}
+                onSignOut={this.onAuthChange}
+                authentication={this.state.authentication}
+              />
+              <GordonNav
+                onDrawerToggle={this.onDrawerToggle}
+                drawerOpen={this.state.drawerOpen}
+                onSignOut={this.onAuthChange}
+                authentication={this.state.authentication}
+              />
+              <main className="app-main">
+                <Switch>
+                  {routes.map((route) => (
+                    <Route
+                      key={route.path}
+                      path={route.path}
+                      exact={route.exact}
+                      render={(props) => (
+                        <div className="app-main-container">
+                          <OfflineBanner
+                            currentPath={route.path}
+                            authentication={this.state.authentication}
+                          />
+                          <route.component
+                            onLogIn={this.onAuthChange}
+                            authentication={this.state.authentication}
+                            {...props}
+                          />
+                        </div>
+                      )}
+                    />
+                  ))}
+                </Switch>
+              </main>
             </Router>
           </NetworkContextProvider>
         </MuiPickersUtilsProvider>

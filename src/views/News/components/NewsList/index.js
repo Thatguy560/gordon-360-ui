@@ -152,17 +152,15 @@ export default class NewsList extends Component {
     }
 
     return (
-      <section>
-        <Card>
-          {header}
-          <Grid>
-            <List className="news-list" disablePadding>
-              {personalUnapprovedPostings}
-              {postings}
-            </List>
-          </Grid>
-        </Card>
-      </section>
+      <Card>
+        {header}
+        <Grid>
+          <List className="news-list" disablePadding>
+            {personalUnapprovedPostings}
+            {postings}
+          </List>
+        </Grid>
+      </Card>
     );
   }
 }

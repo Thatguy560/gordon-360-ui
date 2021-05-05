@@ -104,13 +104,11 @@ export default class EventsAttended extends Component {
     }
 
     return (
-      <section>
-        <Grid container justify="center">
-          <Grid item xs={12} md={12} lg={8}>
-            <List>{content}</List>
-          </Grid>
+      <Grid container justify="center">
+        <Grid item xs={12} md={12} lg={8}>
+          <List>{content}</List>
         </Grid>
-      </section>
+      </Grid>
     );
   }
 }

@@ -210,7 +210,6 @@ class IDUploader extends Component {
     const { preview } = this.state;
 
     const style = {
-
       button: {
         background: gordonColors.primary.cyan,
         color: 'white',
@@ -374,17 +373,15 @@ class IDUploader extends Component {
                   accept="image/jpeg, image/jpg, image/png"
                 >
                   {({ getRootProps, getInputProps }) => (
-                    <section>
-                      <div className="gc360-id-dialog_content_dropzone" {...getRootProps()}>
-                        <input {...getInputProps()} />
-                        <img
-                          className="gc360-id-dialog_content_dropzone_img"
-                          src={`data:image/jpg;base64,${this.state.image}`}
-                          alt=""
-                          style={{ 'max-width': '140px', 'max-height': '140px' }}
-                        />
-                      </div>
-                    </section>
+                    <div className="gc360-id-dialog_content_dropzone" {...getRootProps()}>
+                      <input {...getInputProps()} />
+                      <img
+                        className="gc360-id-dialog_content_dropzone_img"
+                        src={`data:image/jpg;base64,${this.state.image}`}
+                        alt=""
+                        style={{ 'max-width': '140px', 'max-height': '140px' }}
+                      />
+                    </div>
                   )}
                 </Dropzone>
               )}
@@ -451,9 +448,12 @@ class IDUploader extends Component {
           <DialogContent>
             <DialogContentText className="submittedText">
               We got your photo!
-              <br />You should now see it on your MyProfile page, but it may
-              <br />take a couple of days for it to be approved for public view.
-              <br />CTS will contact you if there’s an issue.
+              <br />
+              You should now see it on your MyProfile page, but it may
+              <br />
+              take a couple of days for it to be approved for public view.
+              <br />
+              CTS will contact you if there’s an issue.
             </DialogContentText>
           </DialogContent>
           <DialogActions>

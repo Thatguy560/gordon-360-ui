@@ -226,18 +226,16 @@ export default class Login extends Component {
             <Typography className="error" variant="body2" color="error">
               {this.state.error}
             </Typography>
-            <section className="button-wrapper">
-              <Button
-                variant="contained"
-                className="submit-button"
-                type="submit"
-                color="primary"
-                disabled={!this.state.username || !this.state.password || this.state.loading}
-              >
-                {!this.state.loading && 'Log in'}
-                {this.state.loading && <CircularProgress size={24} />}
-              </Button>
-            </section>
+            <Button
+              variant="contained"
+              className="submit-button"
+              type="submit"
+              color="primary"
+              disabled={!this.state.username || !this.state.password || this.state.loading}
+            >
+              {!this.state.loading && 'Log in'}
+              {this.state.loading && <CircularProgress size={24} />}
+            </Button>
           </form>
         </Box>
         {this.state.network === 'online' && this.state.showPWALink && (

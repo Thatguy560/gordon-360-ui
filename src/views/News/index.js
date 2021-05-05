@@ -345,7 +345,7 @@ export default class StudentNews extends Component {
         (networkStatus === 'offline' && this.props.authentication)
       ) {
         news = (
-          <section>
+          <>
             {/* Button to Create Posting */}
             <Fab
               variant="extended"
@@ -491,7 +491,7 @@ export default class StudentNews extends Component {
                 {content}
               </Grid>
             </Grid>
-          </section>
+          </>
         );
       }
       // If the user is offline
