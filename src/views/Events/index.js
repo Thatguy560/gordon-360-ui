@@ -24,8 +24,9 @@ const Events = (props) => {
   const [events, setEvents] = useState([]);
   const [filteredEvents, setFilteredEvents] = useState([]);
   //TODO: useQueryState('search', types.SingleValue); - needs debouncing
-  const [search, setSearch] = useState('');
-  const [includePast, setIncludePast] = useQueryState('past', types.Boolean, true);
+  // const [search, setSearch] = useState('');
+  const [search, setSearch] = useQueryState('search', types.String);
+  const [includePast, setIncludePast] = useQueryState('past', types.Boolean);
   const [filters, setFilters] = useQueryState('filters', types.Array);
   const [loading, setLoading] = useState(true);
   const futureEvents = useMemo(() => gordonEvent.getFutureEvents(allEvents), [allEvents]);
@@ -54,8 +55,8 @@ const Events = (props) => {
   }, [events, filters, search]);
 
   useEffect(() => {
-    setOpen(filters.length > 0 || includePast);
-  }, [filters.length, includePast]);
+    setOpen(filters.length > 0 || includePast || open);
+  }, [filters.length, includePast, open]);
 
   const handleExpandClick = () => {
     clearFilters();
