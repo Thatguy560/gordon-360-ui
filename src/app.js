@@ -23,6 +23,10 @@ export default class App extends Component {
       analytics.initialize();
     }
 
+    Notification.requestPermission(function (status) {
+      console.log('Notification permission status:', status);
+    });
+
     this.history = createBrowserHistory();
     this.history.listen(() => analytics.onPageView());
 

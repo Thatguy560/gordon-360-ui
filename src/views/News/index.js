@@ -72,10 +72,28 @@ export default class StudentNews extends Component {
     this.callFunction = this.callFunction.bind(this);
   }
 
+  randomNotification() {
+    const notifTitle = 'Title';
+    const notifBody = `Created by Josh.`;
+    const notifImg = `hi`;
+    const options = {
+      body: notifBody,
+      icon: notifImg,
+    };
+    new Notification(notifTitle, options);
+    setTimeout(this.randomNotification, 1000);
+  }
+
   componentDidMount() {
     this.setState({ loading: false });
     this.loadNews();
     this.loadUsername();
+    this.randomNotification();
+    this.randomNotification();
+    this.randomNotification();
+    this.randomNotification();
+    this.randomNotification();
+    this.randomNotification();
     window.addEventListener('resize', this.resize);
   }
 
